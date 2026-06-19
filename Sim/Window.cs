@@ -1,20 +1,20 @@
 namespace Sim;
 
-public class Window(Pair ratio, int scale, int fps = 60)
+public class Window(int width, int height, int fps = 60)
 {
-    //todo: replace ratio param with individual ints and set up lcd math to create a pair for ratio
-    //todo: (follow pair rule for fields only)
-    
     //todo: add method calculations for proper scaling
+
+    private int _scale = Util.GCD(width, height);
+    private Pair _dimensions = new(width / Util.GCD(width, height), height / Util.GCD(width, height));
     public int Width
     {
-        get => ratio.X * scale;
+        get => _dimensions.X * _scale;
         set;
     }
 
     public int Height
     {
-        get => ratio.Y * scale;
+        get => _dimensions.Y * _scale;
         set;
     }
 

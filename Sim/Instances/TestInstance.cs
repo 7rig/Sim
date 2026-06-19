@@ -9,7 +9,7 @@ public class TestInstance : Instance
     
     public override Window Initialize()
     {
-        return new Window(new(16, 9), 60);
+        return new Window(960, 540);
     }
 
     public override void Update(uint dt)
