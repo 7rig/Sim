@@ -4,16 +4,16 @@ namespace Sim.Instances;
 
 public class TestInstance : Instance
 {
-    private string _msg = "Ticks elapsed: 0";
+    private string _msg = "Secs elapsed: 0";
     
     public override Window Initialize()
     {
-        return new Window(new(16, 9), 30);
+        return new Window(new(16, 9), 60);
     }
 
     public override void Update(uint dt)
     {
-        _msg = $"Ticks elapsed: {dt}";
+        _msg = $"Secs elapsed: {dt / InstanceWindow.FPS}";
     }
 
     public override void Draw()

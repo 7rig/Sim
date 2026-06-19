@@ -1,6 +1,6 @@
 namespace Sim;
 
-public class Window(Pair ratio, int scale)
+public class Window(Pair ratio, int scale, int fps = 60)
 {
     public int Width
     {
@@ -11,6 +11,12 @@ public class Window(Pair ratio, int scale)
     public int Height
     {
         get => ratio.Y * scale;
+        set;
+    }
+
+    public int FPS
+    {
+        get => fps;
         set;
     }
 }

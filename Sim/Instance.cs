@@ -7,6 +7,7 @@ public abstract class Instance
 {
     private uint _dt;
     private Window _window;
+    public Window InstanceWindow { get => _window; set; }
     
     public abstract Window Initialize();
     public abstract void Update(uint dt);
@@ -18,7 +19,7 @@ public abstract class Instance
         _dt = 0;
         
         InitWindow(_window.Width, _window.Height, "Program");
-        SetTargetFPS(60);
+        SetTargetFPS(_window.FPS);
 
         while (!WindowShouldClose())
         {
